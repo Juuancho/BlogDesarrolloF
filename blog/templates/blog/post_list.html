@@ -14,16 +14,12 @@
         <p><strong>En duda cual es mejor que el otro...</strong></p>
     </div>
 
+    {% for post in posts %}
     <div>
-        <h2><a href="">Mi primer post</a></h2>
-        <p>Publicado 15.11.2024, 17:17</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ea velit quis soluta minus id? Quod impedit molestias adipisci ducimus, officia dolores consectetur quas sed similique incidunt enim dicta possimus!</p>
+        <p>publicado: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text |linebreaksbr }}</p>
     </div>
-
-    <div>
-        <h2><a href="">Todo funcionando</a></h2>
-        <p>Eeee!!</p>
-        <p>Funciona!</p>
-    </div>
+    {% endfor %}
 </body>
 </html>
